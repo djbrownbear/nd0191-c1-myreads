@@ -1,17 +1,17 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-const UpdateShelf = ({ book, onUpdateShelf }) => {
-  const [shelf, setShelf] = useState("");
+const ChangeShelf = ({ book, shelfValue, onChangeShelf }) => {
+  const [shelf, setShelf] = useState(shelfValue);
 
-  const changeShelf = ((value) => {
+  const handleChange = ((value) => {
     setShelf(value);
-    onUpdateShelf(book, value)
+    onChangeShelf(book, value)
   });
 
   return (
     <div className="book-shelf-changer">
-      <select value={shelf} onChange={(e) => changeShelf(e.target.value)}>
+      <select value={book.shelf} onChange={(e) => handleChange(e.target.value)}>
         <option value="none" disabled>
           Move to...
         </option>
@@ -26,9 +26,9 @@ const UpdateShelf = ({ book, onUpdateShelf }) => {
   );
 };
 
-UpdateShelf.propTypes = {
+ChangeShelf.propTypes = {
   book: PropTypes.object.isRequired,
-  onUpdateShelf: PropTypes.func.isRequired,
+  onChangeShelf: PropTypes.func.isRequired,
 };
 
-export default UpdateShelf;
+export default ChangeShelf;
