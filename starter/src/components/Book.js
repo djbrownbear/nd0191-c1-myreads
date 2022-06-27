@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import ChangeShelf from "./ChangeShelf";
 // import { Link } from "react-router-dom";
 
-const Book = ({ book, changeShelf }) => {
+const Book = ({ book, shelfValue, changeShelf }) => {
   return (
     <li>
       <div className="book">
@@ -16,7 +16,11 @@ const Book = ({ book, changeShelf }) => {
             }}
           ></div>
 
-          <ChangeShelf book={book} onChangeShelf={book, changeShelf} />
+          <ChangeShelf 
+            book={book} 
+            shelfValue={shelfValue} 
+            onChangeShelf={changeShelf} 
+          />
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{book.authors && book.authors.join(", ")}</div>

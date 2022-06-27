@@ -1,6 +1,5 @@
 import "../css/App.css";
 import { useState, useEffect } from "react";
-import ChangeShelf from "./ChangeShelf";
 import * as BooksAPI from "../utils/BooksAPI";
 import SearchBooks from "./SearchBooks";
 import ListBooks from "./ListBooks";
@@ -25,7 +24,7 @@ function App() {
       const updatedBooks = books.filter(b => b.id != book.id)
       setBooks(updatedBooks.concat(book));
     };
-    
+
     update();
   }
 
@@ -34,7 +33,7 @@ function App() {
       {showSearchPage ? (
         <SearchBooks books={books} />
       ) : (
-        <ListBooks books={books} onChangeShelf={changeShelf} />
+        <ListBooks books={books} changeShelf={changeShelf} />
       )}
       <div className="open-search">
         <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
