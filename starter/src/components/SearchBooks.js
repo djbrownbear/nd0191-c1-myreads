@@ -18,7 +18,7 @@ const SearchBooks = ({ books, changeShelf }) =>{
         if(Array.isArray(resBooks)) {
           resBooks.forEach((book) => {
             books.forEach((bk) => {
-              if (book.id === book.id) {
+              if (book.id === bk.id) {
                 book.shelf = bk.shelf; 
               }
             });

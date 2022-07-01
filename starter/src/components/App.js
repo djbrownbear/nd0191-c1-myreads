@@ -17,11 +17,10 @@ function App() {
   }, []);
 
   const changeShelf = (book, shelf) => {
-    const update = aync => {
-      BooksAPI.update(book, shelf);
-
-      book.shelf = shelf
-      const updatedBooks = books.filter(b => b.id != book.id)
+    const update = async () => {
+      await BooksAPI.update(book, shelf);
+      book.shelf = shelf  
+      const updatedBooks = books.filter(b => b.id !== book.id)
       setBooks(updatedBooks.concat(book));
     };
 

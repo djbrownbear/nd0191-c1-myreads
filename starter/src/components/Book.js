@@ -29,4 +29,10 @@ const Book = ({ book, shelfValue, changeShelf }) => {
   );
 };
 
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  shelfValue: PropTypes.string.isRequired,
+  changeShelf: PropTypes.array.isRequired,
+}
+
 export default Book;
