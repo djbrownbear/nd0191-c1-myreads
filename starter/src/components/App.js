@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="app">
       {showSearchPage ? (
-        <SearchBooks books={books} />
+        <SearchBooks books={books} changeShelf={changeShelf}/>
       ) : (
         <ListBooks books={books} changeShelf={changeShelf} />
       )}
