@@ -1,9 +1,7 @@
 import BookShelf from "./BookShelf";
-import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ListBooks = ({ books, changeShelf }) => {
-  const [showSearchPage, setShowSearchpage] = useState(false);
 
   return (
     <div className="list-books">
@@ -34,9 +32,9 @@ const ListBooks = ({ books, changeShelf }) => {
           />
         </div>
       </div>
-      {/* <div className="open-search">
-        <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
-      </div> */}
+      {<div className="open-search">
+        <Link to="/search" className="a"> Add a book</Link>
+      </div>}
     </div>
   ) 
 }

@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Book from "./Book";
 import * as BooksAPI from "../utils/BooksAPI";
-// TODO - add link to go back to the main bookshelf page
-// import { Link } from "react-router-dom";
 
 const SearchBooks = ({ books, changeShelf }) =>{
   const [query, setQuery] = useState("");
@@ -41,12 +40,7 @@ const SearchBooks = ({ books, changeShelf }) =>{
   return (
     <div className='search-books'>
       <div className="search-books-bar">
-        <a
-          className="close-search"
-          // onClick={() => {} setShowSearchpage(!showSearchPage)}
-        >
-          Close
-        </a>
+        <Link to="/" className="close-search">Close</Link>
         <div className="search-books-input-wrapper">
           <input
             type="text"

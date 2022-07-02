@@ -1,11 +1,11 @@
 import "../css/App.css";
 import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import * as BooksAPI from "../utils/BooksAPI";
 import SearchBooks from "./SearchBooks";
 import ListBooks from "./ListBooks";
 
 function App() {
-  const [showSearchPage, setShowSearchpage] = useState(false);
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -28,16 +28,20 @@ function App() {
   }
 
   return (
-    <div className="app">
-      {showSearchPage ? (
-        <SearchBooks books={books} changeShelf={changeShelf}/>
-      ) : (
-        <ListBooks books={books} changeShelf={changeShelf} />
-      )}
-      <div className="open-search">
-        <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
-      </div>
-    </div>
+    <Routes>
+      <Route 
+        exact path="/"
+        element= {
+          <ListBooks books={books} changeShelf={changeShelf} />
+        }
+      />
+      <Route 
+        path="/search"
+        element= {
+          <SearchBooks books={books} changeShelf={changeShelf}/>
+        }
+      />
+    </Routes>
   );
 }
 

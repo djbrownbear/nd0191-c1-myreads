@@ -13,7 +13,8 @@ const ChangeShelf = ({ book, shelfValue, onChangeShelf }) => {
     <div className="book-shelf-changer">
       <select 
         value={book.shelf ? book.shelf:"none"} 
-        onChange={(e) => handleChange(e.target.value)}>
+        onChange={(e) => handleChange(e.target.value)}
+      >
         <option value="moveTo" disabled>
           Move to...
         </option>
@@ -30,6 +31,7 @@ const ChangeShelf = ({ book, shelfValue, onChangeShelf }) => {
 
 ChangeShelf.propTypes = {
   book: PropTypes.object.isRequired,
+  shelfValue: PropTypes.object.isRequired,
   onChangeShelf: PropTypes.func.isRequired,
 };
 
