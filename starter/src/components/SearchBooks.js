@@ -33,10 +33,6 @@ const SearchBooks = ({ books, changeShelf }) =>{
       })
   };
 
-  const clearQuery = () => {
-    updateQuery("");
-  };
-
   return (
     <div className='search-books'>
       <div className="search-books-bar">
