@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const ChangeShelf = ({ book, shelfValue, onChangeShelf }) => {
-  const [shelf, setShelf] = useState(shelfValue);
+  const [setShelf] = useState(shelfValue);
 
   const handleChange = ((value) => {
     setShelf(value);
