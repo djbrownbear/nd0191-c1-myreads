@@ -49,7 +49,7 @@ const SearchBooks = ({ books, changeShelf }) =>{
       <div className="search-books-results">
         <ol className="books-grid">
           {searchedBooks.map((book,index) => (
-            <Book book={book} shelfValue={book.shelf} changeShelf={changeShelf} />
+            <Book key={index} book={book} shelfValue={book.shelf} changeShelf={changeShelf} />
           ))}
         </ol>
       </div>

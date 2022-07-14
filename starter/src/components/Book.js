@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import ChangeShelf from "./ChangeShelf";
 
-const Book = ({ book, shelfValue, changeShelf }) => {
+const Book = ({ book, changeShelf }) => {
   return (
     <li>
       <div className="book">
@@ -17,7 +17,7 @@ const Book = ({ book, shelfValue, changeShelf }) => {
 
           <ChangeShelf 
             book={book} 
-            shelfValue={shelfValue} 
+            shelfValue={book.shelf ? book.shelf:"none"} 
             onChangeShelf={changeShelf} 
           />
         </div>
@@ -30,8 +30,7 @@ const Book = ({ book, shelfValue, changeShelf }) => {
 
 Book.propTypes = {
   book: PropTypes.object.isRequired,
-  shelfValue: PropTypes.string.isRequired,
-  changeShelf: PropTypes.array.isRequired,
+  changeShelf: PropTypes.func.isRequired,
 }
 
 export default Book;
